@@ -85,7 +85,9 @@ module.exports = async function handler(req, res) {
             return res.status(502).json({ error: "Não foi possível salvar a inscrição. Tente novamente." });
         }
 
-        return res.status(201).json({ message: "Inscrição enviada com sucesso!" });
+        return res.status(201).json({
+            message: "Cadastro confirmado! Sua inscrição foi realizada com sucesso."
+        });
     } catch (error) {
         console.error("Supabase request failed:", error instanceof Error ? error.message : "Unknown error");
         return res.status(502).json({ error: "Não foi possível salvar a inscrição. Tente novamente." });
