@@ -1,0 +1,195 @@
+:root {
+    --bg-dark: #061826;
+    --bg-soft: rgba(10, 23, 34, 0.74);
+    --card-bg: rgba(255, 255, 255, 0.96);
+    --primary: #1f7ae0;
+    --primary-dark: #144b9e;
+    --text-dark: #102332;
+    --text-light: #edf5ff;
+    --border: rgba(17, 38, 54, 0.12);
+    --shadow: 0 20px 45px rgba(3, 9, 17, 0.2);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px;
+    background-image: linear-gradient(rgba(6, 24, 38, 0.3), rgba(6, 24, 38, 0.3)),
+        url("./photos/foto-fundo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color: var(--text-dark);
+}
+
+.page-shell {
+    width: min(1100px, 100%);
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 32px;
+    padding: 24px;
+    justify-items: start;
+}
+
+.hero-copy {
+    padding: 24px 16px;
+    color: #ffffff;
+    max-width: 620px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+}
+
+.form-card {
+    justify-self: start;
+    margin-left: 0;
+    width: min(100%, 420px);
+}
+
+.eyebrow {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.hero-copy h1 {
+    margin: 0 0 16px;
+    font-size: clamp(2.5rem, 4vw, 4.2rem);
+    line-height: 1.1;
+}
+
+.hero-copy p {
+    margin: 0 0 20px;
+    max-width: 560px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #ffffff;
+}
+
+.highlights {
+    margin: 0;
+    padding-left: 18px;
+    display: grid;
+    gap: 10px;
+    font-size: 1.03rem;
+    color: #ffffff;
+}
+
+.highlights li::marker {
+    color: #8bc5ff;
+}
+
+.form-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 28px 24px;
+    box-shadow: var(--shadow);
+    margin-left: 0;
+}
+
+.form-card h2 {
+    margin: 0 0 20px;
+    font-size: 1.9rem;
+    text-align: center;
+    color: var(--text-dark);
+}
+
+form {
+    display: grid;
+    gap: 18px;
+}
+
+.form-status {
+    min-height: 1.4em;
+    margin: 0;
+    text-align: center;
+    font-weight: 700;
+}
+
+.form-status[data-state="success"] {
+    color: #126341;
+}
+
+.form-status[data-state="error"] {
+    color: #b42318;
+}
+
+.field-group {
+    display: grid;
+    gap: 8px;
+}
+
+label {
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+input {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid #d9e5ee;
+    background: #f7fafc;
+    font-size: 1rem;
+    color: var(--text-dark);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(31, 122, 224, 0.15);
+}
+
+button {
+    margin-top: 8px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    padding: 16px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 12px 24px rgba(32, 91, 182, 0.28);
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 16px 28px rgba(32, 91, 182, 0.32);
+}
+
+@media (max-width: 780px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-copy {
+        padding: 8px 6px;
+    }
+
+    .form-card {
+        padding: 22px 18px;
+    }
+}
+
